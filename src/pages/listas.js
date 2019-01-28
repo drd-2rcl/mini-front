@@ -96,7 +96,7 @@ export default class listas extends Component {
             <Link to="/listas" >
               <Button >Cancelar</Button>
             </Link>
-            <Link to="/listas" >
+            <Link to="/criar-listas" >
               <Button white sienna>Criar Lista
               </Button>
             </Link>
