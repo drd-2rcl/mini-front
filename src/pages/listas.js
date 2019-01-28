@@ -7,7 +7,7 @@ export default class listas extends Component {
       <div>
         Página "Listas"
         <button>
-          <Link to="/criarListas" >Ícone - Criar Lista</Link>
+          <Link to="/criar-listas" >Ícone - Criar Lista</Link>
         </button>
       </div>
     )

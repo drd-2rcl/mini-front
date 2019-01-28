@@ -19,7 +19,7 @@ export default class Router extends Component {
               <Route path="/cadastro" component={Cadastro} />
               <Route path="/login" component={Login} />
               <Route path="/listas" component={Listas} />
-              <Route path="/criarListas" component={CriarListas} />
+              <Route path="/criar-listas" component={CriarListas} />
               <Route component={Error}/>
           </Switch>
         </div>
