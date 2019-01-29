@@ -21,20 +21,20 @@ max-width: 550px;
 `;
 
 const Header = styled.div`
-background-color: #574437;
+background-color: #78695e;
 height: auto;
 width: 100%;
 `;
 
 const Row = styled.div`
-justify-content: ${props => (props.around ? 'space-around' : 'center')};
-margin: ${props => (props.margin ? '20px 0' : '0')};
+justify-content: ${props => (props.around ? 'space-around' : 'space-between')};
+margin: ${props => (props.margin ? '20px 0' : '0 auto')};
 width: ${props => (props.start ? '100%' : 'auto')} ;
 flex-direction: row;
 align-items: center;
 display: flex;
 height: 10vh;
-/* max-width: ${props => (props.max ? '85%' : 'none')}; */
+max-width: ${props => (props.max ? '45%' : 'none')};
 `;
 
 const H1 = styled.h1`
@@ -76,15 +76,28 @@ padding: ${props => (props.left ? '0 0 0 19px' : 'none')};
 margin: 0;
 `;
 
+const Span = styled.span`
+font-size: 1rem;
+color: #f0f1a5;
+margin: 0 5px;
+`;
+
+const StyledDiv = styled.div`
+display: flex;
+align-items: center;
+`;
 
 class CriarListas extends Component {
   render() {
     return (
       <Container>
         <Header>
-          <Row around >
-            <StyledImg alt="" src={miniMarca} />
-            <StyledImg alt="" src={avatar} />
+          <Row max>
+            <StyledImg style={{height: '4vh'}} alt="" src={miniMarca} />
+            <StyledDiv >
+              <StyledImg alt="" src={avatar} />
+              <Span>Usuário 1</Span>
+            </StyledDiv>
           </Row>
         </Header>
         <Section>
@@ -97,7 +110,7 @@ class CriarListas extends Component {
             type="text"
             placeholder="Adicionar tarefa" 
             />
-          <Row margin start>
+          <Row around margin start>
             <Link to="/listas" >
               <Button >Cancelar</Button>
             </Link>
