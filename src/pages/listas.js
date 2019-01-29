@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 import miniMarca from '../assets/marca_mini_app.png';
 import avatar from '../assets/avatar.png';
+import adicionar from '../assets/botao_adicionar.png';
 
 
 const Container = styled.div`
@@ -22,20 +23,30 @@ max-width: 550px;
 `;
 
 const Header = styled.div`
-background-color: #574437;
+background-color: #78695e;
 height: auto;
 width: 100%;
 `;
 
 const Row = styled.div`
-justify-content: ${props => (props.around ? 'space-around' : 'center')};
-margin: ${props => (props.margin ? '20px 0' : '0')};
+justify-content: ${props => (props.around ? 'space-around' : 'space-between')};
+margin: ${props => (props.margin ? '20px 0' : '0 auto')};
 width: ${props => (props.start ? '100%' : 'auto')} ;
 flex-direction: row;
 align-items: center;
 display: flex;
 height: 10vh;
-/* max-width: ${props => (props.max ? '85%' : 'none')}; */
+max-width: ${props => (props.max ? '45%' : 'none')};
+`;
+
+const StyledRow = styled.div`
+justify-content: space-between;
+margin: 5px auto;
+width: ${props => (props.start ? '100%' : 'auto')} ;
+flex-direction: row;
+align-items: flex-end;
+display: flex;
+height: 3vh;
 `;
 
 const H1 = styled.h1`
@@ -77,22 +88,48 @@ padding: ${props => (props.left ? '0 0 0 19px' : 'none')};
 margin: 0;
 `;
 
+const Span = styled.span`
+font-size: 1rem;
+color: #f0f1a5;
+margin: 0 5px;
+`;
+
+const StyledDiv = styled.div`
+display: flex;
+align-items: center;
+`;
+
 export default class listas extends Component {
   render() {
     return (
       <Container>
         <Header>
-          <Row around >
-            <StyledImg alt="" src={miniMarca} />
-            <StyledImg alt="" src={avatar} />
+          <Row max>
+            <StyledImg style={{height: '4vh'}} alt="" src={miniMarca} />
+            <StyledDiv >
+              <StyledImg alt="" src={avatar} />
+              <Span>Usuário 1</Span>
+            </StyledDiv>
           </Row>
         </Header>
         <Section>
-          <H1>Listas</H1>
+          <StyledRow start around>
+            <H1>Listas</H1>
+            <StyledImg alt="" src={adicionar} />
+          </StyledRow>
           <Input
             type="text"
-            placeholder="Lista 1" />
-          <Row margin start>
+            placeholder="Lista 1">
+          </Input>
+          <Input
+            type="text"
+            placeholder="Lista 2">
+          </Input>
+          <Input
+            type="text"
+            placeholder="Lista 3">
+          </Input>
+          <Row around margin start>
             <Link to="/listas" >
               <Button >Cancelar</Button>
             </Link>
